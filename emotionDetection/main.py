@@ -2,7 +2,7 @@ from keras.models import load_model
 from time import sleep
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing import image
-import cv2 #OpenCV ---> video is a collection of frames
+import cv2 
 import numpy as np
 from flask import Flask , render_template
 import time
@@ -16,14 +16,14 @@ def index():
 
     emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral', 'Sad', 'Surprise']
 
-    cap = cv2.VideoCapture(0) # 0 for default camera of personal computer - capture
+    cap = cv2.VideoCapture(0) 
 
     i=0
     L={}
     while True:
         _,frame=cap.read()
         labels = []
-        gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY) # converting to grayscale
+        gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY) 
         faces = face_classifier.detectMultiScale(gray)
 
         # making a rectangle box for face
@@ -37,8 +37,8 @@ def index():
                 roi = img_to_array(roi)
                 roi = np.expand_dims(roi,axis=0)
 
-                prediction = classifier.predict(roi)[0] # using model to predict
-                label=emotion_labels[prediction.argmax()] # maximum for angry
+                prediction = classifier.predict(roi)[0]
+                label=emotion_labels[prediction.argmax()] 
                 if(label in L):
                     L[label]+=1
                 else:

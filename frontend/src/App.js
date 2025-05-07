@@ -11,10 +11,10 @@ function Garlic(){
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" id="home" href="http://localhost:3000/home">Home</a>
+                    <a class="nav-link" id="home" href="https://emotifyfrontend.vercel.app/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="abt-us" href="http://localhost:3000/about">About-Us</a>
+                    <a class="nav-link" id="abt-us" href="https://emotifyfrontend.vercel.app/about">About-Us</a>
                 </li>
                 </ul>
             </div>
